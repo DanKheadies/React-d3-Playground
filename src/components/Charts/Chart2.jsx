@@ -20,21 +20,24 @@ function loadShips(ships) {
     console.log(ships[0].LOA)
     console.log(ships[0].LloydsPAX)
 
-    let editedShipsArray = [1];
-    editedShipsArray = ships.length;
-    editedShipsArray = Array.apply(null, editedShipsArray).map(Number.prototype.valueOf, 5);
-    console.log(editedShipsArray);
+    // const shipsByLOA = ships.map(ship => {
+    //     const container = {};
 
-    // return (
-    //     Array.apply(
-    //         null,
-    //         {
-    //             length: ships.length
-    //         }).map(() => [
-    //             ships,
-    //             randomNum()
-    //         ])
-    // )
+    //     container[ship.LOA] = 1
+    // })
+
+    // console.log(editedShipsArray);
+
+    return (
+        Array.apply(
+            null,
+            {
+                length: ships.length
+            }).map(() => [
+                randomNum(),
+                randomNum()
+            ])
+    )
 }
 
 // function getLOA(ship) {
