@@ -50,16 +50,17 @@ function loadShips(ships) {
         {
             length: ships.length
         }).map((currentShip, index) => {
-            console.log(ships[index].IMO)
+            console.log(ships[index].LOA)
+            // console.log(currentShip[index].IMO) // won't work this way
         });
 
     const derp2 = Array.apply(
         null,
         {
             length: ships.length
-        }).map(() => [
-            randomNum(),
-            randomNum()
+        }).map((currentShip, index) => [
+            ships[index].LloydsPAX,
+            ships[index].LOA
         ]);
 
     console.log(derp2);
