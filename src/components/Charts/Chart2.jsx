@@ -5,6 +5,13 @@ import * as d3 from 'd3'
 import cruiseShips from '../Data/Cruise-Ship-Estimates.csv'
 
 var cruiseShipData;
+const object1 = {
+    a: 'somestring',
+    b: 42,
+    c: false
+};
+var list = ['h', 'e', 'l', 'l', 'o'];
+
 
 function RandomStoredCruiseShip() {
     let randomNum = Math.floor(Math.random() * cruiseShipData.length);
@@ -17,27 +24,72 @@ function loadShips(ships) {
     // console.log(cruiseShipData[0].LOA)
     // console.log(cruiseShipData[0].LloydsPAX)
     console.log(ships)
-    console.log(ships[0].LOA)
-    console.log(ships[0].LloydsPAX)
+    // console.log(ships[0].LOA)
+    // console.log(ships[0].LloydsPAX)
+    // console.log(object1)
+    // console.log(Object.values(object1))
+    // console.log(Object.values(ships))
 
-    // const shipsByLOA = ships.map(ship => {
+    // cruiseShipData.map((currElement, index) => {
+    //     console.log("The current iteration is: " + index);
+    //     console.log("The current element is: " + currElement.IMO);
+    //     console.log("\n");
+    //     return 'X';
+    // });
+
+    // return (
+    //     ships.map(ship => {
+    //         miniArray = {};
+    //         miniArray[ship.LOA] = ship.LOA;
+    //         miniArray[ship.LloydsPAX] = ship.LloydsPAX;
+    //     })
+    // )
+
+    const derp = Array.apply(
+        null,
+        {
+            length: ships.length
+        }).map((currentShip, index) => {
+            console.log(ships[index].IMO)
+        });
+
+    const derp2 = Array.apply(
+        null,
+        {
+            length: ships.length
+        }).map(() => [
+            randomNum(),
+            randomNum()
+        ]);
+
+    console.log(derp2);
+    return derp2;
+
+
+    // ships.map(ship => {
     //     const container = {};
 
-    //     container[ship.LOA] = 1
+    //     container[ship.LOA] = ship.LOA;
+    //     container[ship.LloydsPAX] = ship.LloydsPAX;
+
+    //     console.log(container);
     // })
 
-    // console.log(editedShipsArray);
+    // return (
+    //     Array.apply(
+    //         null,
+    //         {
+    //             length: ships.length
+    //         }).map(() => [
+    //             randomNum(),
+    //             randomNum()
+    //         ])
+    // )
+}
 
-    return (
-        Array.apply(
-            null,
-            {
-                length: ships.length
-            }).map(() => [
-                randomNum(),
-                randomNum()
-            ])
-    )
+function getIMO(ship, ind) {
+    var imo = ship[ind].iMO;
+    return imo;
 }
 
 // function getLOA(ship) {
