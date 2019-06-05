@@ -23,7 +23,7 @@ function loadShips(ships) {
     )
 }
 
-class Chart extends React.Component {
+class Chart2 extends React.Component {
     styles = {
         width: 500,
         height: 250,
@@ -72,4 +72,4 @@ class Chart extends React.Component {
     }
 }
 
-export default Chart
+export default Chart2

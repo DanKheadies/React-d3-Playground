@@ -1,6 +1,7 @@
 import React from 'react'
 import * as d3 from 'd3'
 
+
 class Axis extends React.Component {
     componentDidMount() {
         this.renderAxis()
@@ -23,11 +24,11 @@ class Axis extends React.Component {
             var axis = d3.axisBottom(this.props.scale)
                 .ticks(5)
         }
-        else if (this.props.orient === "left") {
+
+        if (this.props.orient === "left") {
             axis = d3.axisLeft(this.props.scale)
                 .ticks(5)
         }
-
 
         d3.select(node).call(axis);
     }

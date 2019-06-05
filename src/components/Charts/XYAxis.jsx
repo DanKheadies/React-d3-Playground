@@ -16,8 +16,8 @@ function XYAxis(props) {
 
     return (
         <g className="xy-axis">
-            <Axis {...xSettings} />
-            <Axis {...ySettings} />
+            <Axis {...xSettings} {...props} />
+            <Axis {...ySettings} {...props} />
         </g>
     )
 }
