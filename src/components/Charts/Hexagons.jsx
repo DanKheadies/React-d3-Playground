@@ -4,8 +4,8 @@ import * as d3 from 'd3'
 const transitionDuration = 400;
 const h = Math.sqrt(3) / 2;
 const r = 30;
-const hexCols = 5;
-const hexRows = 5;
+const hexCols = 7;
+const hexRows = 7;
 
 function buildHexPath(x = 0, y = 0) {
     return d3.line()
@@ -89,6 +89,9 @@ class Hexagons extends React.Component {
                 return `translate(${cx}, ${cy}) rotate(90 0 0)`;
             });
 
+        // 2x2 = 450
+
+        // this.svg.style.height = 515;
         const svgBox = this.svg.getBoundingClientRect();
         console.log(svgBox);
         const hexBox = this.hexGroup.node().getBBox();
@@ -120,7 +123,7 @@ class Hexagons extends React.Component {
         // const hexGroupHeight = this.svg.getBoundingClientRect().width;
         const hexStyle = {
             flex: 1,
-            height: 420,
+            height: "100%",
             width: "100%"
         }
         return (
